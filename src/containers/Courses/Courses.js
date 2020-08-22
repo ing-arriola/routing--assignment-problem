@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Course from "../Course/Course";
 import "./Courses.css";
 
 class Courses extends Component {
@@ -22,13 +22,12 @@ class Courses extends Component {
         <section className="Courses">
           {this.state.courses.map((course) => {
             return (
-              <article
-                className="Course"
+              <Course
                 key={course.id}
                 onClick={() => this.courseSelectedHandler(course.id)}
               >
                 {course.title}
-              </article>
+              </Course>
             );
           })}
         </section>

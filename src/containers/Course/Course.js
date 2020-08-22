@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-
+import "./Course.css";
 class Course extends Component {
   render() {
     return (
-      <div onClick={props.clicked}>
+      <div className="Course" onClick={this.props.clicked}>
         <h1>_COURSE_TITLE_</h1>
         <p>You selected the Course with ID: _ID_</p>
       </div>
