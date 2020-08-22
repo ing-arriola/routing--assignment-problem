@@ -3,9 +3,9 @@ import "./Course.css";
 class Course extends Component {
   render() {
     return (
-      <div className="Course" onClick={this.props.clicked}>
-        <h1>_COURSE_TITLE_</h1>
-        <p>You selected the Course with ID: _ID_</p>
+      <div className="Course">
+        <h1> {this.props.name} </h1>
+        <p>You selected the Course with ID:{this.props.id}</p>
       </div>
     );
   }

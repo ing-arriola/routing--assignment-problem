@@ -9,10 +9,13 @@ class Courses extends Component {
       { id: 2, title: "Vue - The Complete Guide" },
       { id: 3, title: "PWA - The Complete Guide" },
     ],
+    selectedCourseId: null,
+    selectedCourseTitle: null,
   };
 
-  courseSelectedHandler = (id) => {
-    console.log(id);
+  courseSelectedHandler = (id, title) => {
+    this.setState({ selectedCourseId: id });
+    this.setState({ selectedCourseTitle: title });
   };
 
   render() {
@@ -22,15 +25,22 @@ class Courses extends Component {
         <section className="Courses">
           {this.state.courses.map((course) => {
             return (
-              <Course
+              <article
+                className="Course"
                 key={course.id}
-                onClick={() => this.courseSelectedHandler(course.id)}
+                onClick={() =>
+                  this.courseSelectedHandler(course.id, course.title)
+                }
               >
                 {course.title}
-              </Course>
+              </article>
             );
           })}
         </section>
+        <Course
+          id={this.state.selectedCourseId}
+          name={this.state.selectedCourseTitle}
+        />
       </div>
     );
   }
